@@ -1,7 +1,6 @@
 units          lj
 atom_style     full
 boundary       p p f
-#processors     * * 1
 
 ### Force field ###
 #                     r_cut
@@ -12,6 +11,7 @@ special_bonds  fene
 
 read_data      ../data.equi
 
+#                K    R0  e   s
 bond_coeff     1 30.0 1.5 1.0 1.0
 
 # 'Static' pair coefficients
@@ -22,7 +22,7 @@ pair_coeff 3 3   1.0   1.0 2.5     # Solvent-solvent
 # Dynamic pair coefficents
 #                  e      s   cutoff
 pair_coeff 1*2 1*2 ${epp} 1.0 2.5
-pair_coeff 1*2 3   ${eps} 1.0 2.5
+pair_coeff 1*2 3   ${eps} 1.0 ${cps}
 
 ### Run settings ###
 timestep       0.005
@@ -35,12 +35,6 @@ group          mobile subtract all grafting
 fix            walls all wall/harmonic zlo EDGE 100 1 1 zhi EDGE 100 1 1
 fix            freezeGrafting grafting setforce 0 0 0
 neigh_modify   exclude group grafting grafting
-
-variable       T_RT     equal 0.85
-variable       mu       equal -3.5
-variable       seed     equal 334232
-variable       sol_height equal 20
-variable       mu       equal 0
 
 # GCMC
 region         solvent block EDGE EDGE EDGE EDGE $(zhi-v_sol_height-1) $(zhi-1) units box
@@ -91,4 +85,4 @@ thermo_style   custom step temp pe etotal press v_press c_Tmobile v_Nvap cpurema
 shell          mkdir img_gcmc
 dump           1 all image 100000 img_gcmc/*.jpg type type view 90 90 size 1000 1000 zoom 2
 
-run            9000000
+run            $r
