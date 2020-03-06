@@ -9,7 +9,7 @@ pair_modify    shift yes
 bond_style     fene
 special_bonds  fene
 
-read_data      ../data.equi
+read_data      ../data.equi.gz
 
 #                K    R0  e   s
 bond_coeff     1 30.0 1.5 1.0 1.0
@@ -64,7 +64,7 @@ fix            prof_dens_solv solvent ave/chunk 100 100 10000 cc density/number 
 fix prof_temp  all                    ave/chunk 100 100 10000 cc temp           file Temp.dat
 
 # Pressure profile
-compute atom_stress all stress/atom thermo_temp
+compute        atom_stress all stress/atom thermo_temp
 variable       atom_press   atom -(c_atom_stress[1]+c_atom_stress[2]+c_atom_stress[3])/3
 variable       atom_press_z atom -c_atom_stress[3]
 
