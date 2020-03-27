@@ -26,7 +26,7 @@ pair_coeff 1*2 1*2 ${epp} 1.0 2.5
 pair_coeff 1*2 3   ${eps} 1.0 ${cps}
 
 ### Run settings ###
-timestep       0.02
+timestep       0.015
 run_style      respa 2 2
 neighbor       0.3 bin
 neigh_modify   delay 1 every 1 check yes
