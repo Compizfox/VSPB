@@ -66,5 +66,5 @@ fix            lv             mobile langevin ${T_RT} ${T_RT} 100 ${seed}
 fix_modify     lv             temp Tmobile
 run            200000
 
-write_restart  restart.equi.gz
-write_data     data.equi.gz
+write_restart  restart.equi
+write_data     data.equi
