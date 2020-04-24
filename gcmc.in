@@ -86,3 +86,4 @@ shell          mkdir img_gcmc
 dump           1 all image 100000 img_gcmc/*.jpg type type view 90 90 size 1000 1000 zoom 2
 
 run            $r
+write_data     gcmc.data
