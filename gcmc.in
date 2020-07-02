@@ -10,7 +10,7 @@ pair_modify    shift yes
 bond_style     fene
 special_bonds  fene
 
-read_data      ../${equi_data}
+read_data      ${equi_data}
 
 #                K    R0  e   s
 bond_coeff     1 30.0 1.5 1.0 1.0
