@@ -10,7 +10,7 @@ pair_modify    shift yes
 bond_style     fene
 special_bonds  fene
 
-read_data      ../${equi_data}
+read_data      ${equi_data}
 
 #                K    R0  e   s
 bond_coeff     1 30.0 1.5 1.0 1.0
@@ -86,3 +86,4 @@ shell          mkdir img_gcmc
 dump           1 all image 100000 img_gcmc/*.jpg type type view 90 90 size 1000 1000 zoom 2
 
 run            $r
+write_data     gcmc.data
