@@ -18,10 +18,10 @@ the configuration-driven specification of these variable values for you.
 ## Publication
 These input files are supplemental to the following paper:
 
-Sorption Characteristics of Polymer Brushes in Equilibrium with Solvent Vapors
-Guido C. Ritsema van Eck, Lars B. Veldscholte, Jan H. W. H. Nijkamp, and Sissi de Beer
-Macromolecules 2020 53 (19), 8428-8437
-https://doi.org/10.1021/acs.macromol.0c01637
+Sorption Characteristics of Polymer Brushes in Equilibrium with Solvent Vapors  
+Guido C. Ritsema van Eck, Lars B. Veldscholte, Jan H. W. H. Nijkamp, and Sissi de Beer  
+Macromolecules 2020 53 (19), 8428-8437  
+https://doi.org/10.1021/acs.macromol.0c01637  
 
 ## License
 This repository is licensed under the GPL. See [LICENSE](LICENSE) for details.
